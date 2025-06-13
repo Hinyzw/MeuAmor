@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Amor da Minha Vida ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <section class="secret-section">
+        <h2>💌 Mensagem Secreta</h2>
+        <input type="password" id="secret-password" placeholder="Digite a senha..." />
+        <button onclick="revealSecret()">Ver Mensagem</button>
+        <div id="secret-message" style="display:none; margin-top:10px;"></div>
+    </section>
+
+    <div class="container">
+        <!-- Carta Animada -->
+        <div class="envelope-container">
+            <div class="envelope" id="envelope">
+                <div class="card" id="card">
+                    <h2>Para o amor da minha vida...</h2>
+                    <p>Clique para abrir seu presente especial ❤️</p>
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Calendário -->
+        <section class="calendar-section">
+            <h2>Nosso Mês Especial</h2>
+            <div class="calendar">
+                <div class="calendar-header">
+                    <h3>Junho 2025</h3>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day day-name">D</div>
+                    <div class="calendar-day day-name">S</div>
+                    <div class="calendar-day day-name">T</div>
+                    <div class="calendar-day day-name">Q</div>
+                    <div class="calendar-day day-name">Q</div>
+                    <div class="calendar-day day-name">S</div>
+                    <div class="calendar-day day-name">S</div>
+                    
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day day-12">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contagem de Dias -->
+        <section class="counter-section">
+            <h2>Nossa Jornada</h2>
+            <div class="counter" id="days-counter"></div>
+            <p>de amor e felicidade juntos</p>
+        </section>
+        
+        <!-- Galeria de Fotos -->
+        <section class="gallery-section">
+            <h2>Nossos Momentos</h2>
+            <div class="gallery" id="gallery">
+                <!-- Fotos serão adicionadas via JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Músicas -->
+        <section class="music-section">
+            <h2>Nossa Trilha Sonora</h2>
+            <div class="music-container">
+                <div class="music-item">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/SEU_ID_AQUI?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <p>Nossa música especial</p>
+                </div>
+                <div class="music-item">
+                    <iframe src="https://open.spotify.com/embed/track/5Q0Nhxo0l2bP3pNjpGJwV1" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <p>Quando nos conhecemos</p>
+                </div>
+                <div class="music-item">
+                    <iframe src="https://open.spotify.com/embed/track/7KzjdS5qMlPNDBw2BG8t0O" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <p>Nosso primeiro beijo</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        window.addEventListener("scroll", () => {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.textContent = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        });
+        
+        
+        // Data do início do relacionamento (substitua pela sua data)
+        const startDate = new Date("2024-12-29");
+        
+        // Fotos da galeria (substitua pelas suas fotos)
+        const photos = [
+            { src: "imagens/4.jpeg", caption: "Nosso primeiro encontro como amigos" },
+            { src: "imagens/10.jpeg", caption: "Nosso primeiro encontro como casal" },
+            { src: "imagens/11.jpeg", caption: "Nosso primeiro aniversário juntos" },
+            { src: "imagens/12.jpeg", caption: "Sempre juntos" },
+            { src: "imagens/2.jpeg", caption: "Momento especial" },
+            { src: "imagens/1.jpeg", caption: "Celebrando o nosso amor" },
+            { src: "imagens/2.jpeg", caption: "Nosso olhar" },
+            { src: "imagens/5.jpeg", caption: "E foi assim que tudo começou" }
+        ];
+        
+        // Inicialização quando o DOM estiver carregado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configura a carta
+            const envelope = document.getElementById('envelope');
+            const card = document.getElementById('card');
+            
+            envelope.addEventListener('click', function() {
+                this.classList.add('open');
+                card.style.display = 'flex';
+                
+                // Mostra a mensagem romântica em um alert
+                setTimeout(() => {
+                    Swal.fire({
+                        title: "Meu amor!",
+                        text: "Meu amor, Nesse Dia dos Namorados, quero que você saiba que cada momento ao seu lado é um presente que guardo no meu coração. Você transformou minha vida em algo mais bonito e significativo. Prometo estar ao seu lado em todos os momentos, nos momentos felizes e tristes, Você me deu razões para continuar lutando. Eu te amo mais do que todas as estrelas no céu, mais do que todas as palavras podem expressar. Eu voltaria mais de 34 dias por você ❤️",
+                        imageUrl: "imagens/imagem.jpg",
+                        imageWidth: 200,
+                        imageHeight: 400,
+                        imageAlt: "Custom image"
+                      });
+                    
+                    // Depois do alert, solta os corações e inicia o efeito de digitação
+                    createHearts(20);
+                }, 500);
+            });
+            
+            // Calcula dias juntos
+            updateDaysCounter();
+            
+            // Preenche a galeria de fotos
+            fillGallery();
+            
+            // Inicia as flores
+            startFlowers();
+        });
+        
+        // Efeito de digitação
+        function typeWriter(elementId, text, i) {
+            if (i < text.length) {
+                document.getElementById(elementId).innerHTML += text.charAt(i);
+                i++;
+                setTimeout(() => typeWriter(elementId, text, i), 20);
+            } else {
+                document.getElementById(elementId).classList.remove('typing-text');
+            }
+        }
+        
+        // Cria corações flutuantes
+        function createHearts(count) {
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    document.body.appendChild(heart);
+                    
+                    // Remove o coração após a animação
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 300);
+            }
+        }
+        
+        // Atualiza o contador de dias
+        function updateDaysCounter() {
+            const today = new Date();
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('days-counter').textContent = diffDays + ' dias';
+        }
+        
+        // Preenche a galeria com fotos
+        function fillGallery() {
+            const gallery = document.getElementById('gallery');
+            
+            photos.forEach(photo => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                
+                const img = document.createElement('img');
+                img.src = photo.src;
+                img.alt = photo.caption;
+                
+                const caption = document.createElement('div');
+                caption.className = 'gallery-caption';
+                caption.textContent = photo.caption;
+                
+                item.appendChild(img);
+                item.appendChild(caption);
+                gallery.appendChild(item);
+            });
+        }
+        
+        // Animação das flores (estilo TikTok)
+        function startFlowers() {
+            const flowers = ['🌹', '🌸', '🌺', '🌻', '💐', '🌷'];
+            
+            setInterval(() => {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                document.body.appendChild(flower);
+                
+                // Remove a flor após a animação
+                setTimeout(() => flower.remove(), 6000);
+            }, 800);
+        }
+
+        function revealSecret() {
+            const password = document.getElementById("secret-password").value;
+            const messageDiv = document.getElementById("secret-message");
+        
+            if (password === "teamo123") {
+                messageDiv.style.display = "block";
+                Swal.fire({
+                    title: "Meu amor!",
+                    text: "Meu amor, cada dia ao seu lado é um presente. Hoje, no Dia dos Namorados, quero renovar meu amor por você. Você é a pessoa que me faz sorrir mesmo nos dias mais difíceis. Obrigado por ser meu porto seguro, meu melhor amigo e meu grande amor. Prometo estar ao seu lado em todos os momentos, pro resto da vida, independete do momento. Te amo mais que tudo! ❤️",
+                    imageUrl: "imagens/obamitsu.jpg",
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: "Custom image"
+                  });;
+            } else {
+                Swal.fire("Senha incorreta", "Tente novamente com carinho 💕", "error");
+            }
+        }
+        
+    </script>
+</body>
+</html>

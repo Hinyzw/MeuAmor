@@ -1,0 +1,352 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #d81b60;
+}
+
+/* Carta Animada */
+.envelope-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.envelope {
+    width: 300px;
+    height: 200px;
+    background: #f9c7c7;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform-origin: top;
+}
+
+.envelope:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #f5a3a3;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: all 0.3s 0.3s ease;
+    z-index: 3;
+}
+
+.envelope.open:before {
+    transform: rotateX(180deg);
+}
+
+.card {
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    background: white;
+    border-radius: 3px;
+    padding: 20px;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Corações */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Calendário */
+.calendar-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.calendar {
+    display: inline-block;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.calendar-header {
+    margin-bottom: 15px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    gap: 5px;
+}
+
+.calendar-day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.day-name {
+    font-weight: bold;
+    color: #d81b60;
+}
+
+.day-12 {
+    background: #d81b60;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Contagem de Dias */
+.counter-section {
+    text-align: center;
+    margin: 50px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.counter {
+    font-size: 36px;
+    font-weight: bold;
+    color: #d81b60;
+    margin: 10px 0;
+}
+
+/* Galeria de Fotos */
+.gallery-section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(216, 27, 96, 0.8);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Músicas */
+.music-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.music-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.music-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.music-item {
+    transition: transform 0.3s ease;
+  }
+  .music-item:hover {
+    transform: scale(1.03);
+  }
+  
+/* Flores */
+.flower {
+    position: fixed;
+    font-size: 24px;
+    animation: floatFlower 6s linear forwards;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes floatFlower {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Texto Digitando */
+.typing-text {
+    border-right: 2px solid #d81b60;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: repeat(7, 35px);
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #d81b60;
+    margin-top: 10px;
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+.secret-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.secret-section input {
+    padding: 10px;
+    border: 1px solid #d81b60;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.secret-section button {
+    padding: 10px 20px;
+    background: #d81b60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.secret-section button:hover {
+    background: #b3144f;
+}
